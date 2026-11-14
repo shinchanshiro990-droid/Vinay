@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08090e">
+    <title>VINAY MODEL | Birthday Battle</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div class="loader" id="loader">
+        <h1>FREE FIRE</h1>
+        <p>LOADING BIRTHDAY MISSION...</p>
+        <div class="loading-bar">
+            <span></span>
+        </div>
+        <small>PREPARING THE BATTLEFIELD</small>
+    </div>
+
+    <!-- BACKGROUND -->
+    <div class="background-glow"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            🔥 BIRTHDAY<span> BATTLE</span>
+        </div>
+
+        <div class="status">
+            ● SPECIAL MISSION
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="tag">
+                    ⚡ A LEGEND WAS BORN ON NOVEMBER 15
+                </p>
+
+                <h1>
+                    VINAY<br>
+                    <span>MODEL</span>
+                </h1>
+
+                <p class="subtitle">
+                    THE BATTLEFIELD HAS A KING
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-btn" onclick="startMission()">
+                        ENTER THE BATTLE ⚔
+                    </button>
+
+                    <button class="secondary-btn" onclick="showMessage()">
+                        SPECIAL MESSAGE 💌
+                    </button>
+
+                </div>
+
+                <div class="player-info">
+
+                    <div>
+                        <small>PLAYER</small>
+                        <strong>VINAY MODEL</strong>
+                    </div>
+
+                    <div>
+                        <small>MISSION</small>
+                        <strong>BIRTHDAY</strong>
+                    </div>
+
+                    <div>
+                        <small>RANK</small>
+                        <strong>LEGENDARY</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-art">
+
+                <div class="circle circle-one"></div>
+                <div class="circle circle-two"></div>
+
+                <div class="character">
+                    🔥
+                </div>
+
+                <div class="level">
+                    LV. 20
+                    <small>LEGEND</small>
+                </div>
+
+                <div class="floating-text">
+                    BOOYAH!
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MISSION SECTION -->
+        <section class="mission" id="mission">
+
+            <p class="tag">YOUR SPECIAL DAY</p>
+
+            <h2>
+                MISSION <span>UNLOCKED</span>
+            </h2>
+
+            <p class="description">
+                A special player has entered the battlefield.
+                Today is not an ordinary day.
+                It's the birthday of our legendary player!
+            </p>
+
+            <div class="mission-card">
+
+                <div class="mission-icon">
+                    🎯
+                </div>
+
+                <div>
+                    <h3>MISSION: BIRTHDAY CELEBRATION</h3>
+                    <p>
+                        Objective: Celebrate the legend's special day.
+                    </p>
+                </div>
+
+                <span class="complete">
+                    ACTIVE
+                </span>
+
+            </div>
+
+            <button class="primary-btn" onclick="completeMission()">
+                COMPLETE MISSION →
+            </button>
+
+        </section>
+
+        <!-- PLAYER STATS -->
+        <section class="stats">
+
+            <p class="tag">PLAYER PROFILE</p>
+
+            <h2>
+                LEGENDARY <span>STATS</span>
+            </h2>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span>🔥</span>
+                    <h3>100%</h3>
+                    <p>ATTITUDE</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>⚡</span>
+                    <h3>MAX</h3>
+                    <p>ENERGY</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>👑</span>
+                    <h3>HERO</h3>
+                    <p>STATUS</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>💎</span>
+                    <h3>RARE</h3>
+                    <p>PLAYER</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PHOTO GALLERY -->
+        <section class="gallery">
+
+            <p class="tag">PLAYER MEMORIES</p>
+
+            <h2>
+                THE <span>LEGEND</span>
+            </h2>
+
+            <div class="photo-grid">
+
+                <div class="photo-slot">
+                    <span>📸</span>
+                    <p>PLAYER PHOTO 01</p>
+                </div>
+
+                <div class="photo-slot">
+                    <span>📸</span>
+                    <p>PLAYER PHOTO 02</p>
+                </div>
+
+                <div class="photo-slot">
+                    <span>📸</span>
+                    <p>PLAYER PHOTO 03</p>
+                </div>
+
+            </div>
+
+            <p class="gallery-note">
+                Photos can be added here later.
+            </p>
+
+        </section>
+
+        <!-- BIRTHDAY CELEBRATION -->
+        <section class="birthday" id="birthday">
+
+            <div class="birthday-content">
+
+                <div class="cake">
+                    🎂
+                </div>
+
+                <p class="tag">
+                    15 • NOVEMBER
+                </p>
+
+                <h2>
+                    HAPPY BIRTHDAY
+                </h2>
+
+                <h1>
+                    VINAY MODEL!
+                </h1>
+
+                <p class="wish">
+                    May your life be filled with unlimited happiness,
+                    success, friendship and unforgettable memories.
+                    Keep smiling, keep winning and keep shining!
+                </p>
+
+                <h2 class="booyah">
+                    BOOYAH! 🔥
+                </h2>
+
+                <button class="primary-btn" onclick="celebrate()">
+                    CLAIM YOUR VICTORY 🏆
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            MADE WITH ❤️ FOR VINAY MODEL
+        </p>
+
+        <small>
+            ONE PLAYER. ONE LEGEND. ONE SPECIAL DAY.
+        </small>
+
+    </footer>
+
+    <!-- POPUP MESSAGE -->
+    <div class="popup" id="popup">
+
+        <div class="popup-box">
+
+            <button class="close" onclick="closePopup()">
+                ✕
+            </button>
+
+            <div class="popup-icon">
+                🎁
+            </div>
+
+            <h2 id="popup-title">
+                SPECIAL MESSAGE
+            </h2>
+
+            <p id="popup-message">
+                Happy Birthday Vinay!
+                You are not just a player, you are a legend.
+                May every new level of your life bring
+                more happiness and success!
+            </p>
+
+            <button class="primary-btn" onclick="closePopup()">
+                THANK YOU ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
