@@ -4,317 +4,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#08090e">
-    <title>VINAY MODEL | Birthday Battle</title>
-
+    <meta name="theme-color" content="#090909">
+    <title>Vinay Model | Birthday Battle</title>
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <!-- LOADING SCREEN -->
-    <div class="loader" id="loader">
-        <h1>FREE FIRE</h1>
-        <p>LOADING BIRTHDAY MISSION...</p>
-        <div class="loading-bar">
-            <span></span>
-        </div>
-        <small>PREPARING THE BATTLEFIELD</small>
-    </div>
+    <div id="particles"></div>
+    <div class="scanlines"></div>
 
-    <!-- BACKGROUND -->
-    <div class="background-glow"></div>
-    <div class="particles" id="particles"></div>
+    <button id="soundBtn" class="sound-btn">🔊 SOUND ON</button>
 
-    <!-- HEADER -->
-    <header>
-        <div class="brand">
-            🔥 BIRTHDAY<span> BATTLE</span>
-        </div>
+    <!-- INTRO -->
+    <section id="introScreen" class="screen active">
+        <div class="intro-content">
+            <p class="eyebrow">BIRTHDAY SPECIAL OPERATION</p>
+            <div class="game-logo">BOOYAH<span>!</span></div>
+            <h1>THE LEGEND<br><span>IS HERE</span></h1>
+            <p class="intro-subtitle">A special mission has been created for one player.</p>
 
-        <div class="status">
-            ● SPECIAL MISSION
-        </div>
-    </header>
-
-    <main>
-
-        <!-- HERO SECTION -->
-        <section class="hero" id="home">
-
-            <div class="hero-content">
-
-                <p class="tag">
-                    ⚡ A LEGEND WAS BORN ON NOVEMBER 15
-                </p>
-
-                <h1>
-                    VINAY<br>
-                    <span>MODEL</span>
-                </h1>
-
-                <p class="subtitle">
-                    THE BATTLEFIELD HAS A KING
-                </p>
-
-                <div class="hero-buttons">
-
-                    <button class="primary-btn" onclick="startMission()">
-                        ENTER THE BATTLE ⚔
-                    </button>
-
-                    <button class="secondary-btn" onclick="showMessage()">
-                        SPECIAL MESSAGE 💌
-                    </button>
-
+            <div class="loading-box">
+                <div class="loading-label">
+                    <span id="loadingText">CONNECTING TO SERVER...</span>
+                    <span id="loadingPercent">0%</span>
                 </div>
-
-                <div class="player-info">
-
-                    <div>
-                        <small>PLAYER</small>
-                        <strong>VINAY MODEL</strong>
-                    </div>
-
-                    <div>
-                        <small>MISSION</small>
-                        <strong>BIRTHDAY</strong>
-                    </div>
-
-                    <div>
-                        <small>RANK</small>
-                        <strong>LEGENDARY</strong>
-                    </div>
-
+                <div class="loading-track">
+                    <div id="loadingProgress"></div>
                 </div>
-
             </div>
 
-            <div class="hero-art">
+            <button id="startBtn" class="main-btn">PLEASE WAIT...</button>
+            <p class="small-note">HEADPHONES RECOMMENDED • SOUND ON</p>
+        </div>
+    </section>
 
-                <div class="circle circle-one"></div>
-                <div class="circle circle-two"></div>
-
-                <div class="character">
-                    🔥
-                </div>
-
-                <div class="level">
-                    LV. 20
-                    <small>LEGEND</small>
-                </div>
-
-                <div class="floating-text">
-                    BOOYAH!
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- MISSION SECTION -->
-        <section class="mission" id="mission">
-
-            <p class="tag">YOUR SPECIAL DAY</p>
-
-            <h2>
-                MISSION <span>UNLOCKED</span>
-            </h2>
-
-            <p class="description">
-                A special player has entered the battlefield.
-                Today is not an ordinary day.
-                It's the birthday of our legendary player!
-            </p>
-
+    <!-- MISSION -->
+    <section id="missionScreen" class="screen hidden">
+        <div class="panel">
+            <p class="eyebrow">CLASSIFIED TRANSMISSION</p>
+            <div class="mission-icon">⚡</div>
+            <h2>SECRET <span>MISSION</span></h2>
+            <p class="mission-code">OPERATION: BIRTHDAY LEGEND</p>
             <div class="mission-card">
-
-                <div class="mission-icon">
-                    🎯
-                </div>
-
-                <div>
-                    <h3>MISSION: BIRTHDAY CELEBRATION</h3>
-                    <p>
-                        Objective: Celebrate the legend's special day.
-                    </p>
-                </div>
-
-                <span class="complete">
-                    ACTIVE
-                </span>
-
+                <p>PLAYER: <strong>VINAY MODEL</strong></p>
+                <p>MISSION: <strong>UNLOCK THE BIRTHDAY SURPRISE</strong></p>
+                <p>DIFFICULTY: <strong class="gold">LEGENDARY</strong></p>
+                <p>REWARD: <strong>TOP SECRET 🎁</strong></p>
             </div>
+            <p class="description">Your special day deserves a legendary celebration. Complete every challenge to unlock your surprise.</p>
+            <button id="missionBtn" class="main-btn">ACCEPT MISSION ▶</button>
+        </div>
+    </section>
 
-            <button class="primary-btn" onclick="completeMission()">
-                COMPLETE MISSION →
-            </button>
-
-        </section>
-
-        <!-- PLAYER STATS -->
-        <section class="stats">
-
-            <p class="tag">PLAYER PROFILE</p>
-
-            <h2>
-                LEGENDARY <span>STATS</span>
-            </h2>
+    <!-- PLAYER PROFILE -->
+    <section id="profileScreen" class="screen hidden">
+        <div class="panel">
+            <p class="eyebrow">PLAYER IDENTIFICATION</p>
+            <div class="avatar">👑</div>
+            <h2>VINAY <span>MODEL</span></h2>
+            <p class="rank">★ BIRTHDAY ROYALTY ★</p>
 
             <div class="stats-grid">
-
-                <div class="stat-card">
-                    <span>🔥</span>
-                    <h3>100%</h3>
-                    <p>ATTITUDE</p>
-                </div>
-
-                <div class="stat-card">
-                    <span>⚡</span>
-                    <h3>MAX</h3>
-                    <p>ENERGY</p>
-                </div>
-
-                <div class="stat-card">
-                    <span>👑</span>
-                    <h3>HERO</h3>
-                    <p>STATUS</p>
-                </div>
-
-                <div class="stat-card">
-                    <span>💎</span>
-                    <h3>RARE</h3>
-                    <p>PLAYER</p>
-                </div>
-
+                <div class="stat"><strong>99+</strong><span>ENERGY</span></div>
+                <div class="stat"><strong>MAX</strong><span>LEVEL</span></div>
+                <div class="stat"><strong>∞</strong><span>ATTITUDE</span></div>
             </div>
 
-        </section>
-
-        <!-- PHOTO GALLERY -->
-        <section class="gallery">
-
-            <p class="tag">PLAYER MEMORIES</p>
-
-            <h2>
-                THE <span>LEGEND</span>
-            </h2>
-
-            <div class="photo-grid">
-
-                <div class="photo-slot">
-                    <span>📸</span>
-                    <p>PLAYER PHOTO 01</p>
-                </div>
-
-                <div class="photo-slot">
-                    <span>📸</span>
-                    <p>PLAYER PHOTO 02</p>
-                </div>
-
-                <div class="photo-slot">
-                    <span>📸</span>
-                    <p>PLAYER PHOTO 03</p>
-                </div>
-
+            <div class="profile-quote">
+                "Legends are not born every day. Today, one was."
             </div>
 
-            <p class="gallery-note">
-                Photos can be added here later.
-            </p>
-
-        </section>
-
-        <!-- BIRTHDAY CELEBRATION -->
-        <section class="birthday" id="birthday">
-
-            <div class="birthday-content">
-
-                <div class="cake">
-                    🎂
-                </div>
-
-                <p class="tag">
-                    15 • NOVEMBER
-                </p>
-
-                <h2>
-                    HAPPY BIRTHDAY
-                </h2>
-
-                <h1>
-                    VINAY MODEL!
-                </h1>
-
-                <p class="wish">
-                    May your life be filled with unlimited happiness,
-                    success, friendship and unforgettable memories.
-                    Keep smiling, keep winning and keep shining!
-                </p>
-
-                <h2 class="booyah">
-                    BOOYAH! 🔥
-                </h2>
-
-                <button class="primary-btn" onclick="celebrate()">
-                    CLAIM YOUR VICTORY 🏆
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            MADE WITH ❤️ FOR VINAY MODEL
-        </p>
-
-        <small>
-            ONE PLAYER. ONE LEGEND. ONE SPECIAL DAY.
-        </small>
-
-    </footer>
-
-    <!-- POPUP MESSAGE -->
-    <div class="popup" id="popup">
-
-        <div class="popup-box">
-
-            <button class="close" onclick="closePopup()">
-                ✕
-            </button>
-
-            <div class="popup-icon">
-                🎁
-            </div>
-
-            <h2 id="popup-title">
-                SPECIAL MESSAGE
-            </h2>
-
-            <p id="popup-message">
-                Happy Birthday Vinay!
-                You are not just a player, you are a legend.
-                May every new level of your life bring
-                more happiness and success!
-            </p>
-
-            <button class="primary-btn" onclick="closePopup()">
-                THANK YOU ❤️
-            </button>
-
+            <button id="profileBtn" class="main-btn">OPEN MYSTERY CRATE ▶</button>
         </div>
+    </section>
 
+    <!-- LOOT CRATE -->
+    <section id="crateScreen" class="screen hidden">
+        <div class="panel">
+            <p class="eyebrow">RARE DROP DETECTED</p>
+            <h2>MYSTERY <span>LOOT CRATE</span></h2>
+            <p class="description">A legendary reward is waiting. Tap the crate to reveal it.</p>
+
+            <button id="crateBtn" class="crate-btn" aria-label="Open mystery crate">
+                <span>🎁</span>
+                <small>TAP TO OPEN</small>
+            </button>
+
+            <div id="crateReward" class="reward hidden">
+                <div class="reward-icon">🏆</div>
+                <h3>LEGENDARY TITLE UNLOCKED!</h3>
+                <p>THE BIRTHDAY KING</p>
+                <span class="gold">REWARD RARITY: MYTHIC</span>
+            </div>
+
+            <button id="crateNextBtn" class="main-btn hidden">NEXT CHALLENGE ▶</button>
+        </div>
+    </section>
+
+    <!-- TARGET GAME -->
+    <section id="gameScreen" class="screen hidden">
+        <div class="panel game-panel">
+            <p class="eyebrow">SKILL TEST • BATTLE ARENA</p>
+            <h2>TARGET <span>CHALLENGE</span></h2>
+            <p class="description">Hit 5 targets before the timer reaches zero!</p>
+
+            <div class="game-stats">
+                <div class="stat"><span>SCORE</span><strong id="score">0</strong></div>
+                <div class="stat"><span>TIME</span><strong id="timer">30</strong></div>
+                <div class="stat"><span>TARGET</span><strong>5</strong></div>
+            </div>
+
+            <div id="gameArena" class="game-arena">
+                <div class="arena-label">BATTLE ZONE</div>
+                <button id="targetBtn" class="target-btn" aria-label="Shoot target">🎯</button>
+            </div>
+
+            <p id="gameMessage" class="game-message">READY PLAYER ONE?</p>
+            <button id="gameStartBtn" class="main-btn">START CHALLENGE</button>
+            <button id="gameNextBtn" class="main-btn hidden">CLAIM FINAL SURPRISE ▶</button>
+        </div>
+    </section>
+
+    <!-- PHOTO SURPRISE -->
+    <section id="photoScreen" class="screen hidden">
+        <div class="panel">
+            <p class="eyebrow">A SPECIAL MEMORY</p>
+            <h2>ONE MORE <span>SURPRISE</span></h2>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <span>📸</span>
+                    <p>YOUR PHOTO WILL APPEAR HERE</p>
+                    <small>We will add your picture later</small>
+                </div>
+            </div>
+            <p class="description">Every legend has a story. And today, we celebrate yours!</p>
+            <button id="photoBtn" class="main-btn">UNLOCK THE FINAL MOMENT ▶</button>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section id="countdownScreen" class="screen hidden">
+        <div class="panel countdown-panel">
+            <p class="eyebrow">FINAL TRANSMISSION</p>
+            <h2>GET <span>READY!</span></h2>
+            <div id="countdownNumber" class="countdown-number">3</div>
+            <p class="description">The birthday celebration begins now...</p>
+        </div>
+    </section>
+
+    <!-- FINAL -->
+    <section id="finalScreen" class="screen hidden">
+        <canvas id="confettiCanvas"></canvas>
+        <div class="final-content">
+            <p class="eyebrow">MISSION COMPLETED</p>
+            <div class="final-crown">👑</div>
+            <div class="booyah">BOOYAH!</div>
+            <h1>HAPPY<br><span>BIRTHDAY</span></h1>
+            <h2>VINAY MODEL</h2>
+            <p class="final-message">
+                Keep smiling. Keep playing. Keep winning.
+                May your life be filled with happiness, success
+                and legendary moments!
+            </p>
+            <div class="birthday-tag">TODAY IS YOUR DAY, LEGEND! 🎂</div>
+            <button id="replayBtn" class="main-btn">PLAY AGAIN ↻</button>
+        </div>
+    </section>
+
+    <!-- POPUP -->
+    <div id="surprisePopup" class="popup-overlay hidden">
+        <div class="popup-box">
+            <div class="popup-star">✦</div>
+            <h2>SURPRISE!</h2>
+            <p id="popupMessage">A new mission is waiting.</p>
+            <button id="popupCloseBtn" class="main-btn">CONTINUE ▶</button>
+        </div>
     </div>
 
-    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
-
 </body>
 </html>
